@@ -5,12 +5,12 @@ const toDoItems = [
   {
     description:'take out trash',
     completed:false,
-    index:1
+    index:0
   },
   {
     description:'wash dishes',
     completed:false,
-    index:2
+    index:1
   },
   {
     description:'walk dog',
@@ -24,23 +24,33 @@ function component() {
   // element.innerHTML = _.join(['Hello', 'webpack'], ' ');
 
   const refresh = document.createElement('li');
-  refresh.innerHTML = "<p>Today's To Do</p>";
+  refresh.innerHTML = `
+    <p class="header">Today's To Do</p>
+    <button class="button">|</button>
+  `;
   element.appendChild(refresh);
 
   const add = document.createElement('li');
-  add.innerHTML = '<input placeholder="Add to your list...">';
+  add.classList.add('inputNew')
+  add.innerHTML = `
+    <input placeholder="Add to your list..."> 
+    <button class="button">|</button>
+  `;
   element.appendChild(add);
-
-
 
   toDoItems.forEach((item) => {
     let listElement = document.createElement('li');
-    listElement.innerHTML = `<input type="checkbox"> <p>${item.description}</p>`;
+    listElement.innerHTML = `
+     <input type="checkbox" class="checkbox">
+     <p class="title">${item.description}</p> 
+     <button class="button">|</button>
+    `;
     listElement.classList.add('toDoItem')
     element.appendChild(listElement);
   });
 
   const clearCompleted = document.createElement('li')
+  clearCompleted.classList.add('clearCompleted')
   clearCompleted.innerHTML = '<button>Clear all completed</button>'
   element.appendChild(clearCompleted)
 
