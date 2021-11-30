@@ -21,10 +21,12 @@ const toDoItems = [
 function component() {
   const element = document.createElement('ul');
   const refresh = document.createElement('li');
+
   refresh.innerHTML = `
     <p class="header">Today's To Do</p>
     <button class="button"><i class="fas fa-sync"></i></button>
   `;
+  refresh.style.order = -1;
   element.appendChild(refresh);
 
   const add = document.createElement('li');
@@ -33,8 +35,10 @@ function component() {
     <input placeholder="Add to your list..."> 
     <button class="button"><i class="fas fa-reply"></i></button>
   `;
+  add.style.order = -1;
   element.appendChild(add);
 
+  const lengthArray = toDoItems.length;
   toDoItems.forEach((item) => {
     const listElement = document.createElement('li');
     listElement.innerHTML = `
@@ -42,15 +46,16 @@ function component() {
      <p class="title">${item.description}</p> 
      <button class="button"><i class="fas fa-ellipsis-v"></i></button>
     `;
-
     // <i class="far fa-trash-alt"></i> - trash.delete icon
     listElement.classList.add('toDoItem');
+    listElement.style.order = item.index;
     element.appendChild(listElement);
   });
 
   const clearCompleted = document.createElement('li');
   clearCompleted.classList.add('clearCompleted');
   clearCompleted.innerHTML = '<button>Clear all completed</button>';
+  clearCompleted.style.order = lengthArray;
   element.appendChild(clearCompleted);
 
   return element;
