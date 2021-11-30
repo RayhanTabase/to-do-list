@@ -1,3 +1,41 @@
-body {
-  background-color: bisque;
+ul {
+  width: 40rem;
+  max-width: 90%;
+  padding: 0;
+  border: 2px solid black;
+  box-shadow: 0.2em 0.2em 0.3em 0.3em rgba(179, 184, 182, 0.671)
+}
+
+ul li {
+  list-style: none;
+  padding: 0 0 1em 1em;
+  border-bottom: 2px solid black;
+  height: 5em;
+  display: flex;
+  column-gap: 2em;
+  align-items: center;
+}
+
+ul li:last-child {
+  border-bottom: none;
+  background: grey;
+  justify-content: center;
+  align-items: center;
+}
+
+input:placeholder-shown {
+  font-style: italic;
+}
+
+h1 {
+  text-align: center;
+}
+
+#toDoListContainer {
+  width: 100%;
+  min-width: 100%;
+  padding: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
