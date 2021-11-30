@@ -40,6 +40,12 @@ ul li:last-child {
   align-items: center;
 }
 
+ul li button {
+  background: none;
+  border: none;
+  color: #b6b6b6;
+}
+
 input::placeholder {
   font-style: italic;
   color: #a3a3a3;
