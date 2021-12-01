@@ -6,7 +6,7 @@
 
 ## Built With
 
-- HTML, JavaScript, CSS
+- HTML, JavaScript(ES6), CSS
 - Webpack
 - Tools used - Git(version control), WebHint(linting tool), Stylelint(style linting), ESLint(Javascript linting)
 
@@ -16,6 +16,23 @@
 - Basic Javascript knowledge
 - Basic html5 knowledege
 - Basic css3 knowledge
+- Basic understanding of webpack
+
+### Cloning the repo to your local system (If you already have git, installed in your system):
+
+- Open your terminal or command line
+- Run "git clone [Paste this link](https://github.com/RayhanTabase/to-do-list.git"
+- Open the folder with your code editor
+- Install all packages
+- Now You can edit the code and check the changes in the browser using Live Server
+
+### Web-pack Setup
+
+- Install Web-pack: Run npm install webpack
+- Update Distribution folder with the changes from Source folder: Run npm run build
+- Check the live changes through the local host: Run npm start
+
+#### For better guidance on setting up Web-pack in your local system go through [this repo](https://github.com/Vagyasri/Webpack-Setup.git)
 
 ## Authors
 
