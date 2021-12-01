@@ -5,7 +5,7 @@ export default class ToDoList {
   // change status(completed) of to-do item
   static changeStatus(index, status) {
     let model = LocalStorage.getList();
-    if (model.lenth < 1) {
+    if (model.length === 0) {
       model = listModel;
     }
     const listItem = model.find((item) => item.index === index);
