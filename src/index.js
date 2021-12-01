@@ -34,7 +34,7 @@ function component() {
     `;
     listElement.classList.add('toDoItem');
     listElement.style.order = item.index;
-    
+
     // Add  status changer
     const completed = listElement.querySelector('.checkbox');
     completed.checked = item.completed;
