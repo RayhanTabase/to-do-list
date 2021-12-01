@@ -1,0 +1,94 @@
+body {
+  background: #f6f6f6;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+#toDoListContainer {
+  width: 100%;
+  min-width: 100%;
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+ul {
+  width: 40em;
+  max-width: 90%;
+  min-width: 40em;
+  padding: 0;
+  border: 2px solid #f6f6f6;
+  box-shadow: 0.2em 0.2em 0.2em 0.2em rgba(179, 184, 182, 0.603);
+  display: flex;
+  flex-direction: column;
+}
+
+ul li {
+  list-style: none;
+  padding-left: 1.3em;
+  padding-right: 1.3em;
+  border-bottom: 2px solid #dfdfdf;
+  background: #fff;
+  height: 5em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+ul li:last-child {
+  border-bottom: none;
+  background: #f6f6f6;
+  justify-content: center;
+  align-items: center;
+}
+
+ul li button {
+  background: none;
+  border: none;
+  color: #b6b6b6;
+}
+
+input::placeholder {
+  font-style: italic;
+  color: #a3a3a3;
+}
+
+h1 {
+  text-align: center;
+}
+
+p {
+  font-size: 1.2rem;
+}
+
+.inputNew input {
+  font-style: italic;
+  font-size: 1.2rem;
+  border: none;
+}
+
+.inputNew input:focus {
+  outline: none;
+}
+
+.toDoItem .checkbox {
+  width: 2em;
+  height: 20%;
+  margin-right: 1em;
+}
+
+.toDoItem .title {
+  flex: 4;
+}
+
+.toDoItem .button {
+  width: auto;
+}
+
+.clearCompleted button {
+  height: 100%;
+  background: none;
+  border: none;
+  font-size: 1.1rem;
+  color: #a3a3a3;
+}
