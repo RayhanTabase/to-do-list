@@ -1,7 +1,7 @@
 import './style.css';
 import listModel from './listModel.js';
-import { ToDoList } from './toDo.js';
-import { LocalStorage } from './storage';
+import ToDoList from './toDo.js';
+import LocalStorage from './storage.js';
 
 function component() {
   const element = document.createElement('ul');
@@ -23,10 +23,10 @@ function component() {
   add.style.order = -1;
   element.appendChild(add);
 
-  let allItems = LocalStorage.getList()
+  let allItems = LocalStorage.getList();
 
   if (allItems.length < 1) {
-    allItems = listModel
+    allItems = listModel;
   }
 
   const lengthArray = allItems.length;
@@ -41,9 +41,9 @@ function component() {
     listElement.style.order = item.index;
 
     // add  status changer
-    let completed = listElement.querySelector('.checkbox');
+    const completed = listElement.querySelector('.checkbox');
     completed.checked = item.completed;
-    completed.addEventListener('change',(e)=> ToDoList.changeStatus(item.index,e.target.checked))
+    completed.addEventListener('change', (e) => ToDoList.changeStatus(item.index, e.target.checked));
     element.appendChild(listElement);
   });
 
