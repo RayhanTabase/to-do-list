@@ -1,5 +1,4 @@
 import './style.css';
-import listModel from './listModel.js';
 import ToDoList from './toDo.js';
 import LocalStorage from './storage.js';
 
@@ -24,10 +23,6 @@ function component() {
   element.appendChild(add);
 
   let allItems = LocalStorage.getList();
-
-  if (allItems.length < 1) {
-    allItems = listModel;
-  }
 
   const lengthArray = allItems.length;
   allItems.forEach((item) => {
