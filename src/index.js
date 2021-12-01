@@ -22,8 +22,8 @@ function component() {
   add.style.order = -1;
   element.appendChild(add);
 
-  let allItems = LocalStorage.getList();
-
+  // Add list items
+  const allItems = LocalStorage.getList();
   const lengthArray = allItems.length;
   allItems.forEach((item) => {
     const listElement = document.createElement('li');
@@ -35,13 +35,14 @@ function component() {
     listElement.classList.add('toDoItem');
     listElement.style.order = item.index;
 
-    // add  status changer
+    // Add  status changer
     const completed = listElement.querySelector('.checkbox');
     completed.checked = item.completed;
     completed.addEventListener('change', (e) => ToDoList.changeStatus(item.index, e.target.checked));
     element.appendChild(listElement);
   });
 
+  // Add clear completed
   const clearCompleted = document.createElement('li');
   clearCompleted.classList.add('clearCompleted');
   clearCompleted.innerHTML = '<button>Clear all completed</button>';
