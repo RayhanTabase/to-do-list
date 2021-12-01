@@ -14,8 +14,4 @@ export class ToDoList {
     listItem.completed = status;
     LocalStorage.save(model)
   }
-
-  // change index variable
-
-
 }
