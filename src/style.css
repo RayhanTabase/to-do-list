@@ -92,3 +92,22 @@ p {
   font-size: 1.1rem;
   color: #a3a3a3;
 }
+
+input[type=checkbox]:checked {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+input[type=checkbox]:checked::after {
+  content: "\2713";
+  font-size: 1.6rem;
+  color: #7b9cee;
+}
+
+input[type=checkbox]:checked + p {
+  text-decoration: line-through;
+}
