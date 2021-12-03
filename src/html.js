@@ -39,8 +39,8 @@ export default class HtmlToDo {
     listElement.innerHTML = `
      <input type="checkbox" class="checkbox">
      <form class="edit-input"> <input type="text" name="title" class="item-description ${crossed}" value=${item.description} readonly></form>
-     <button class="button move-button"><i class="fas fa-ellipsis-v"></i></button>
-     <button class="button delete-button"><i class="fas fa-trash-alt"></i></button>
+     <button type="button" class="button move-button"><i class="fas fa-ellipsis-v"></i></button>
+     <button type="button" class="button delete-button"><i class="fas fa-trash-alt"></i></button>
     `;
 
     // Add  status changer
@@ -91,7 +91,7 @@ export default class HtmlToDo {
     header.classList.add('container-list');
     header.innerHTML = `
       <p class="header">Today's To Do</p>
-      <button class="button"><i class="fas fa-sync"></i></button>
+      <button type="button" class="button"><i class="fas fa-sync"></i></button>
     `;
     header.style.order = 0;
     element.appendChild(header);
@@ -128,7 +128,7 @@ export default class HtmlToDo {
     const clearCompleted = document.createElement('div');
     clearCompleted.classList.add('clearCompleted');
     clearCompleted.style.order = 3;
-    clearCompleted.innerHTML = '<button>Clear all completed</button>';
+    clearCompleted.innerHTML = '<button type="button">Clear all completed</button>';
     clearCompleted.querySelector('button').addEventListener('click', () => {
       ToDoList.deleteCompleted();
       HtmlToDo.createListStructure();
