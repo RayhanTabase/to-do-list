@@ -4,6 +4,7 @@
   "description": "A todo list using webpack, JavaScript, html, CSS",
   "private": true,
   "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "webpack --watch",
     "start": "webpack serve --open",
     "build": "webpack"
@@ -35,8 +36,5 @@
     "webpack": "^5.64.4",
     "webpack-cli": "^4.9.1",
     "webpack-dev-server": "^4.6.0"
-  },
-  "dependencies": {
-    "lodash": "^4.17.21"
   }
 }
