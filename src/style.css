@@ -1,4 +1,4 @@
-* { 
+* {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
@@ -38,6 +38,19 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+input[type=checkbox]:hover,
+button {
+  cursor: pointer;
+}
+
+.clearCompleted button {
+  height: 100%;
+  background: none;
+  border: none;
+  font-size: 1.1rem;
+  color: #a3a3a3;
 }
 
 .toDoListContainer .container-list button {
@@ -107,20 +120,6 @@ input[type='text'] {
   border: none;
 }
 
-.clearCompleted button {
-  height: 100%;
-  height: 100%;
-  background: none;
-  border: none;
-  font-size: 1.1rem;
-  color: #a3a3a3;
-}
-
-input[type=checkbox]:hover,
-button {
-  cursor: pointer;
-}
-
 input[type=checkbox]:checked {
   display: flex;
   justify-content: center;
@@ -136,28 +135,26 @@ input[type=checkbox]:checked::after {
   color: #7b9cee;
 }
 
-
-
 input[type='text'] {
   outline: none;
   border: none;
   background: none;
 }
 
-.toDoItem.container-list.editing { 
+.toDoItem.container-list.editing {
   background: #dddcaa;
 }
 
 .item-description.crossed {
-  text-decoration:line-through;
+  text-decoration: line-through;
 }
 
 .toDoItem.container-list.editing input[type='text']:hover {
-  cursor:text;
+  cursor: text;
 }
 
 .toDoItem.container-list .move-button:hover {
-  cursor:move;
+  cursor: move;
 }
 
 .toDoItem.container-list .delete-button {
@@ -167,6 +164,3 @@ input[type='text'] {
 .toDoItem.container-list .item-description {
   width: 100%;
 }
-
-
-
