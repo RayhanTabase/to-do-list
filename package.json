@@ -4,7 +4,6 @@
   "description": "A todo list using webpack, JavaScript, html, CSS",
   "private": true,
   "scripts": {
-    "watch": "webpack --watch",
     "start": "webpack serve --open",
     "build": "webpack"
   },
