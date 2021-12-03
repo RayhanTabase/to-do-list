@@ -45,7 +45,7 @@ function component() {
   // Add clear completed
   const clearCompleted = document.createElement('li');
   clearCompleted.classList.add('clearCompleted');
-  clearCompleted.innerHTML = '<button>Clear all completed</button>';
+  clearCompleted.innerHTML = '<button>Clear completed</button>';
   clearCompleted.style.order = lengthArray;
   element.appendChild(clearCompleted);
 
