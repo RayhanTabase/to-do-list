@@ -4,8 +4,6 @@
   "description": "A todo list using webpack, JavaScript, html, CSS",
   "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "test:lighthouse": "lhci autorun --collect.settings.chromeFlags='--no-sandbox'",
     "watch": "webpack --watch",
     "start": "webpack serve --open",
     "build": "webpack"
