@@ -13,7 +13,7 @@ export default class ToDoList {
   // Add
   static add(newInput) {
     // Add if input is not empty
-    if (newInput.trim().length > 1) {
+    if (newInput.trim().length > 0) {
       const model = LocalStorage.getList();
       const newIndex = model.length + 1;
       const newItem = new ListItem(newInput, newIndex);

@@ -55,7 +55,7 @@ export default class HtmlToDo {
     const deleteBtn = listElement.querySelector('.delete-button');
     deleteBtn.addEventListener('click', () => {
       ToDoList.delete(item.index);
-      HtmlToDo.createListStructure();
+      listElement.remove()
     });
 
     // Handle edit form
