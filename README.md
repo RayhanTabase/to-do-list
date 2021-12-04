@@ -2,7 +2,7 @@
 
 # To-Do List
 
-> A minimalist To-Do list app taking advantage of webpack 
+> A minimalist to-do list app taking advantage of webpack 
 
 ## Built With
 
