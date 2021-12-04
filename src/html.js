@@ -36,9 +36,11 @@ export default class HtmlToDo {
       crossed = 'crossed';
     }
 
+    console.log(item.description)
+
     listElement.innerHTML = `
      <input type="checkbox" class="checkbox">
-     <form class="edit-input"> <input type="text" name="title" class="item-description ${crossed}" value=${item.description} readonly></form>
+     <form class="edit-input"> <input type="text" name="title" class="item-description ${crossed}" value="${item.description}" readonly></form>
      <button type="button" class="button move-button"><i class="fas fa-ellipsis-v"></i></button>
      <button type="button" class="button delete-button"><i class="fas fa-trash-alt"></i></button>
     `;
