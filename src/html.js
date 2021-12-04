@@ -36,8 +36,6 @@ export default class HtmlToDo {
       crossed = 'crossed';
     }
 
-    console.log(item.description)
-
     listElement.innerHTML = `
      <input type="checkbox" class="checkbox">
      <form class="edit-input"> <input type="text" name="title" class="item-description ${crossed}" value="${item.description}" readonly></form>
