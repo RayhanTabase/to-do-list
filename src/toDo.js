@@ -56,7 +56,7 @@ export default class ToDoList {
     let listItem =  model.find((item) => item.index === itemIndex)
     let newModel = model.filter((item) => item.index !== itemIndex);
     newModel.splice(newIndex-1,0,listItem)
-    // Chage proceding indices
+    // Chage items indices
     for(let i = newIndex-1; i < newModel.length; i++) newModel[i].index = i+1
     LocalStorage.save(newModel);
   }
