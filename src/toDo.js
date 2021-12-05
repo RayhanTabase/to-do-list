@@ -36,7 +36,8 @@ export default class ToDoList {
   static delete(index) {
     const model = LocalStorage.getList();
     let newModel = model.filter((item) => item.index !== index);
-    newModel = this.reAssignIndex(newModel);
+    // Chamge proceding indices
+    for(let i = index-1; i < newModel.length; i++) newModel[i].index = i+1
     LocalStorage.save(newModel);
   }
 
@@ -44,15 +45,19 @@ export default class ToDoList {
   static deleteCompleted() {
     const model = LocalStorage.getList();
     let newModel = model.filter((item) => item.completed === false);
-    newModel = this.reAssignIndex(newModel);
+    // Adjusts All list index values to match actual index + 1
+    for(let i = 0; i < newModel.length; i++) newModel[i].index = i+1
     LocalStorage.save(newModel);
   }
-
-  // Adjusts list index values to match actual index
-  static reAssignIndex(model) {
-    model.forEach((item, index) => {
-      item.index = index + 1;
-    });
-    return model;
+  
+  // changePosition of index item in array
+  static changePosition(itemIndex,newIndex) {
+    const model = LocalStorage.getList();
+    let listItem =  model.find((item) => item.index === itemIndex)
+    let newModel = model.filter((item) => item.index !== itemIndex);
+    newModel.splice(newIndex-1,0,listItem)
+    // Chage proceding indices
+    for(let i = newIndex-1; i < newModel.length; i++) newModel[i].index = i+1
+    LocalStorage.save(newModel);
   }
 }
