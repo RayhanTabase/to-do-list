@@ -4,6 +4,10 @@
 
 > A minimalist to-do list app taking advantage of webpack 
 
+## Live Demo
+
+[Live Demo Link](https://rayhantabase.github.io/to-do-list/)
+
 ## Built With
 
 - HTML, JavaScript(ES6), CSS
