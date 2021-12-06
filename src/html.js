@@ -27,9 +27,9 @@ export default class HtmlToDo {
   static createListItem(item) {
     const listUl = document.querySelector('.toDoList');
     const listElement = document.createElement('div');
+    listElement.dataset.index = item.index;
     listElement.classList.add('toDoItem');
     listElement.classList.add('container-list');
-    listElement.setAttribute('draggable', true);
     listElement.style.order = item.index;
 
     let crossed = '';
@@ -38,10 +38,10 @@ export default class HtmlToDo {
     }
 
     listElement.innerHTML = `
-     <input type="checkbox" class="checkbox">
-     <form class="edit-input"> <input type="text" name="title" class="item-description ${crossed}" value="${item.description}" readonly></form>
-     <button type="button" class="button move-button"><i class="fas fa-ellipsis-v"></i></button>
-     <button type="button" class="button delete-button"><i class="fas fa-trash-alt"></i></button>
+     <input type="checkbox" class="checkbox" data-index=${item.index}>
+     <form class="edit-input" data-index=${item.index}> <input data-index=${item.index} type="text" name="title" class="item-description ${crossed}" value="${item.description}" readonly></form>
+     <button type="button" class="button" data-index=${item.index}><i data-index=${item.index} class="fas fa-ellipsis-v move-button"></i></button>
+     <button type="button" data-index=${item.index} class="button delete-button" data-index=${item.index}><i data-index=${item.index} class="fas fa-trash-alt"></i></button>
     `;
 
     // Add  status changer
@@ -71,11 +71,13 @@ export default class HtmlToDo {
     // Toggle edit
     listElement.querySelector('.item-description').addEventListener('click', () => HtmlToDo.toggleEditable(listElement));
 
-    // Handle drag
-    listElement.addEventListener('dragstart', ()=> {
-
-    })
-
+    // Add move/drag feature
+    const moveBtn = listElement.querySelector('.move-button');
+    moveBtn.addEventListener('mousedown', (e) => {
+      listElement.setAttribute('draggable', true);
+      listElement.classList.add('dragstart')
+    });
+  
     listUl.append(listElement);
   }
 
@@ -129,6 +131,25 @@ export default class HtmlToDo {
     listUl.classList.add('toDoList');
     listUl.style.order = 2;
     element.appendChild(listUl);
+
+      // Handle drag
+    let draggedItem;
+    listUl.addEventListener('dragstart', (e) => {
+      draggedItem = e.target;
+    }, false);
+    listUl.addEventListener('dragover', (e) => {
+      e.preventDefault();
+    }, false);
+    listUl.addEventListener('drop', (e)=> {
+      e.preventDefault();
+      let droppedOnItem = e.target
+      // console.log(draggedItem,droppedOnItem)
+      ToDoList.changePosition(draggedItem.dataset.index, droppedOnItem.dataset.index)
+      HtmlToDo.createListStructure();
+    },false)
+    listUl.addEventListener('dragend', (e)=> {
+      HtmlToDo.createListStructure();
+    },false)
 
     // Add clear completed
     const clearCompleted = document.createElement('div');

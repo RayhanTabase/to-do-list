@@ -164,3 +164,7 @@ input[type='text'] {
 .toDoItem.container-list .item-description {
   width: 100%;
 }
+
+.dragstart {
+  opacity: 0.3;
+}
