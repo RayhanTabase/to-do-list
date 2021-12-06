@@ -29,6 +29,7 @@ export default class HtmlToDo {
     const listElement = document.createElement('div');
     listElement.classList.add('toDoItem');
     listElement.classList.add('container-list');
+    listElement.setAttribute('draggable', true);
     listElement.style.order = item.index;
 
     let crossed = '';
@@ -69,6 +70,11 @@ export default class HtmlToDo {
 
     // Toggle edit
     listElement.querySelector('.item-description').addEventListener('click', () => HtmlToDo.toggleEditable(listElement));
+
+    // Handle drag
+    listElement.addEventListener('dragstart', ()=> {
+
+    })
 
     listUl.append(listElement);
   }
