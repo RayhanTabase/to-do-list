@@ -4,6 +4,12 @@
 
 > A minimalist to-do list app taking advantage of webpack 
 
+## Screenshots
+
+![screenshot](./projectImages/image1.jpeg)
+![screenshot](./projectImages/image2.jpeg)
+
+
 ## Live Demo
 
 [Live Demo Link](https://rayhantabase.github.io/to-do-list/)
