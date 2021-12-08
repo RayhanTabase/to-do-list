@@ -8,6 +8,10 @@
     "build": "webpack",
     "test": "jest"
   },
+  "jest": {
+    "resetMocks": false,
+    "setupFiles": ["jest-localstorage-mock"]
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/RayhanTabase/to-do-list.git"

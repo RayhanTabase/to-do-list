@@ -2,15 +2,37 @@
 
 const toDoList = require ('./toDo.js');
 
-beforeEach(() => {
-  // to fully reset the state between tests, clear the storage
-  localStorage.clear();
-  // and reset all mocks
-  jest.clearAllMocks();
-  
-  // clearAllMocks will impact your other mocks too, so you can optionally reset individual mocks instead:
-  localStorage.setItem.mockClear();
+
+var localStorageMock = (function() {
+  var store = {};
+
+  return {
+      getItem: function(key) {
+          return store[key] || null;
+      },
+      setItem: function(key, value) {
+          store[key] = value.toString();
+      },
+      clear: function() {
+          store = {};
+      }
+  };
+
+})();
+
+Object.defineProperty(window, 'localStorage', {
+   value: localStorageMock
 });
+
+// beforeEach(() => {
+//   // to fully reset the state between tests, clear the storage
+//   localStorage.clear();
+//   // and reset all mocks
+//   jest.clearAllMocks();
+  
+//   // clearAllMocks will impact your other mocks too, so you can optionally reset individual mocks instead:
+//   localStorage.setItem.mockClear();
+// });
 
 // test('should not impact the next test', () => {
 //   const KEY = 'foo',
