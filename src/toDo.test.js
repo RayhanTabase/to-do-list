@@ -1,14 +1,5 @@
 const LocalStorage = require('./storage.js');
 const ToDoList = require ('./toDo.js');
-// const localStorage = require ('./__mocks__/localStorageMock')
-
-// beforeEach(() => {
-//   // to fully reset the state between tests, clear the storage
-//   localStorage.clear();
-//   // and reset all mocks
-//   jest.clearAllMocks();
-  
-// });
 
 describe('Check toDo List functions ', () => {
 
@@ -22,7 +13,7 @@ describe('Check toDo List functions ', () => {
 
   test('check delete function ', () => {
     ToDoList.delete(1);
-    expect(LocalStorage.getList().length).toEqual(0);
+    expect(LocalStorage.getList()).toHaveLength(0);
   });
 
 });
