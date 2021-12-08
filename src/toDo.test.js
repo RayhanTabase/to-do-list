@@ -1,10 +1,28 @@
-const toDoList = require ('./toDo.js');
+const LocalStorage = require('./storage.js');
+const ToDoList = require ('./toDo.js');
+// const localStorage = require ('./__mocks__/localStorageMock')
 
-test('should not impact the next test', () => {
-  const KEY = 'foo',
-    VALUE = 'bar';
-  dispatch(action.update(KEY, VALUE));
-  expect(localStorage.setItem).toHaveBeenLastCalledWith(KEY, VALUE);
-  expect(localStorage.__STORE__[KEY]).toBe(VALUE);
-  expect(Object.keys(localStorage.__STORE__).length).toBe(1);
+// beforeEach(() => {
+//   // to fully reset the state between tests, clear the storage
+//   localStorage.clear();
+//   // and reset all mocks
+//   jest.clearAllMocks();
+  
+// });
+
+describe('Check toDo List functions ', () => {
+
+  test('check add function ', () => {
+    expect(ToDoList.add('washing dish')).toEqual({description : 'washing dish',index : 1,completed : false});
+  });
+
+  test('check add function, empty value ', () => {
+    expect(ToDoList.add('')).toEqual(false);
+  });
+
+  test('check delete function ', () => {
+    ToDoList.delete(1);
+    expect(LocalStorage.getList().length).toEqual(0);
+  });
+
 });

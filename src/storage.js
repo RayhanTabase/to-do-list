@@ -1,6 +1,6 @@
 class LocalStorage {
   // retrieve to-do list
-  getList() {
+  static getList() {
     let toDoList = JSON.parse(localStorage.getItem('toDoList'));
     if (!toDoList) {
       toDoList = [];
@@ -9,9 +9,9 @@ class LocalStorage {
   }
 
   // save list to local storage
-  save(list) {
+  static save(list) {
     localStorage.setItem('toDoList', JSON.stringify(list));
   }
 }
-const localStorage = new LocalStorage();
-module.exports =  localStorage;
+// const localStorage = new LocalStorage();
+module.exports =  LocalStorage;

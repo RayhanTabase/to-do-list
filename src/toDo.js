@@ -1,57 +1,54 @@
-// import LocalStorage from './storage.js';
-// import ListItem from './listItem.js';
-
-const localStorage = require ('./storage.js')
+const LocalStorage = require ('./storage.js')
 const ListItem = require ('./listItem.js')
 
 class ToDoList {
   // change status(completed) of to-do item
-  changeStatus(index, status) {
-    const model = localStorage.getList();
+  static changeStatus(index, status) {
+    const model = LocalStorage.getList();
     const listItem = model.find((item) => item.index === index);
     listItem.completed = status;
-    localStorage.save(model);
+    LocalStorage.save(model);
   }
   // Add
-  add(newInput) {
+  static add(newInput) {
     // Add if input is not empty
     if (newInput.trim().length > 0) {
-      // const model = localStorage.getItem('toDoList');
+      const model = LocalStorage.getList('toDoList');
       const newIndex = 1;
       const newItem = new ListItem(newInput, newIndex);
-      // model.push(newItem);
-      // localStorage.save(model);
+      model.push(newItem);
+      LocalStorage.save(model);
       return newItem;
     }
     return false;
   }
 
   // Update
-  update(description, index) {
-    const model = localStorage.getList();
+  static update(description, index) {
+    const model = LocalStorage.getList();
     const listItem = model.find((item) => item.index === index);
     listItem.description = description;
-    localStorage.save(model);
+    LocalStorage.save(model);
   }
 
   // Delete
-  delete(index) {
-    const model = localStorage.getList();
+  static delete(index) {
+    const model = LocalStorage.getList();
     let newModel = model.filter((item) => item.index !== index);
     newModel = this.reAssignIndex(newModel);
-    localStorage.save(newModel);
+    LocalStorage.save(newModel);
   }
 
   // Delete completed
-  deleteCompleted() {
-    const model = localStorage.getList();
+  static deleteCompleted() {
+    const model = LocalStorage.getList();
     let newModel = model.filter((item) => item.completed === false);
     newModel = this.reAssignIndex(newModel);
-    localStorage.save(newModel);
+    LocalStorage.save(newModel);
   }
 
   // Adjusts list index values to match actual index
-  reAssignIndex(model) {
+  static reAssignIndex(model) {
     model.forEach((item, index) => {
       item.index = index + 1;
     });
@@ -59,6 +56,4 @@ class ToDoList {
   }
 }
 
-const toDoList = new ToDoList();
-
-module.exports = toDoList;
+module.exports = ToDoList;
