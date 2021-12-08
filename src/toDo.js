@@ -1,7 +1,7 @@
 import LocalStorage from './storage.js';
 import ListItem from './listItem.js';
 
-export default class ToDoList {
+module.exports = class ToDoList {
   // change status(completed) of to-do item
   static changeStatus(index, status) {
     const model = LocalStorage.getList();
@@ -57,4 +57,4 @@ export default class ToDoList {
   }
 }
 
-module.exports = ToDoList;
+//  module.exports = ToDoList.add;
