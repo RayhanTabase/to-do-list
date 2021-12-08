@@ -12,18 +12,19 @@ beforeEach(() => {
   localStorage.setItem.mockClear();
 });
 
-// test('should not impact the next test', () => {
-//   const KEY = 'foo',
-//     VALUE = 'bar';
-//   dispatch(action.update(KEY, VALUE));
-//   expect(localStorage.setItem).toHaveBeenLastCalledWith(KEY, VALUE);
-//   expect(localStorage.__STORE__[KEY]).toBe(VALUE);
-//   expect(Object.keys(localStorage.__STORE__).length).toBe(1);
-// });
-
-it('Check ToDo List function', () => {
-  expect(toDoList.add('washing dish')).toEqual({description : 'washing dish',index : 0,completed : false});
+test('should not impact the next test', () => {
+  const KEY = 'foo',
+    VALUE = 'bar';
+  dispatch(action.update(KEY, VALUE));
+  expect(localStorage.setItem).toHaveBeenLastCalledWith(KEY, VALUE);
+  expect(localStorage.__STORE__[KEY]).toBe(VALUE);
+  expect(Object.keys(localStorage.__STORE__).length).toBe(1);
 });
+
+// it('Check ToDo List function', () => {
+//   console.log(toDoList.add('washing dish'))
+//   expect(toDoList.add('washing dish')).toEqual({description : 'washing dish',index : 1,completed : false});
+// });
 
 // describe('Check toDo List functions ', () => {
 //

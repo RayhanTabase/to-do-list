@@ -12,16 +12,15 @@ class ToDoList {
     listItem.completed = status;
     localStorage.save(model);
   }
-
   // Add
   add(newInput) {
     // Add if input is not empty
     if (newInput.trim().length > 0) {
-      const model = localStorage.getItem('toDoList');
-      const newIndex = model.length + 1;
+      // const model = localStorage.getItem('toDoList');
+      const newIndex = 1;
       const newItem = new ListItem(newInput, newIndex);
-      model.push(newItem);
-      localStorage.save(model);
+      // model.push(newItem);
+      // localStorage.save(model);
       return newItem;
     }
     return false;
