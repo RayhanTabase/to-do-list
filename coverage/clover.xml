@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1638973556270" clover="3.2.0">
-  <project timestamp="1638973556270" name="All files">
+<coverage generated="1638977375356" clover="3.2.0">
+  <project timestamp="1638977375356" name="All files">
     <metrics statements="90" coveredstatements="42" conditionals="0" coveredconditionals="0" methods="9" coveredmethods="0" elements="99" coveredelements="42" complexity="0" loc="90" ncloc="90" packages="1" files="3" classes="3"/>
     <file name="listItem.js" path="C:\Users\R\Desktop\Microverse\module 2\projects\to-do-list\to-do-list\src\listItem.js">
       <metrics statements="9" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
