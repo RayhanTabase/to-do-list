@@ -1,6 +1,8 @@
 // const {test, expect, describe } = require('@jest/globals');
 
 const ToDoList = require ('./toDo.js');
+const LocalStorage = require ('./storage.js');
+const ListItem = require ('./listItem.js')
 
 it('Check ToDo List function', () => {
   const toDoList = new ToDoList();
@@ -8,11 +10,11 @@ it('Check ToDo List function', () => {
 });
 
 // describe('Check toDo List functions ', () => {
-
+//
 //   test('check add function ', () => {
-//     //  
-    
-//     expect(ToDoList('Wash dishes')).toEqual({description : "Wash dishes",index : 0,completed : false});
+//     //
+//
+//     expect(new ToDoList('I am the add function')).toEqual('I am the add function');
 //   });
-
+//
 // });

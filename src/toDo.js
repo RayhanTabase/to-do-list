@@ -1,7 +1,7 @@
-import LocalStorage from './storage.js';
-import ListItem from './listItem.js';
+// import LocalStorage from './storage.js';
+// import ListItem from './listItem.js';
 
-module.exports = class ToDoList {
+class ToDoList {
   // change status(completed) of to-do item
   static changeStatus(index, status) {
     const model = LocalStorage.getList();
@@ -11,7 +11,7 @@ module.exports = class ToDoList {
   }
 
   // Add
-  static add(newInput) {
+  add(newInput) {
     // Add if input is not empty
     if (newInput.trim().length > 0) {
       const model = LocalStorage.getList();
@@ -57,4 +57,4 @@ module.exports = class ToDoList {
   }
 }
 
-//  module.exports = ToDoList.add;
+ module.exports = ToDoList;
