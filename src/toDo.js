@@ -1,5 +1,5 @@
-const LocalStorage = require ('./storage.js')
-const ListItem = require ('./listItem.js')
+const LocalStorage = require('./storage.js');
+const ListItem = require('./listItem.js');
 
 class ToDoList {
   // change status(completed) of to-do item
@@ -9,6 +9,7 @@ class ToDoList {
     listItem.completed = status;
     LocalStorage.save(model);
   }
+
   // Add
   static add(newInput) {
     // Add if input is not empty

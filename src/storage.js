@@ -14,4 +14,4 @@ class LocalStorage {
   }
 }
 // const localStorage = new LocalStorage();
-module.exports =  LocalStorage;
+module.exports = LocalStorage;

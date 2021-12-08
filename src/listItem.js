@@ -6,4 +6,4 @@ class ListItem {
   }
 }
 
-module.exports = ListItem
+module.exports = ListItem;

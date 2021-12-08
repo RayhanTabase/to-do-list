@@ -1,10 +1,9 @@
 const LocalStorage = require('./storage.js');
-const ToDoList = require ('./toDo.js');
+const ToDoList = require('./toDo.js');
 
 describe('Check toDo List functions ', () => {
-
   test('check add function ', () => {
-    expect(ToDoList.add('washing dish')).toEqual({description : 'washing dish',index : 1,completed : false});
+    expect(ToDoList.add('washing dish')).toEqual({ description: 'washing dish', index: 1, completed: false });
   });
 
   test('check add function, empty value ', () => {
@@ -15,5 +14,4 @@ describe('Check toDo List functions ', () => {
     ToDoList.delete(1);
     expect(LocalStorage.getList()).toHaveLength(0);
   });
-
 });
