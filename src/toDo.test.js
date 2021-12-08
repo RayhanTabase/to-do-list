@@ -1,4 +1,11 @@
+const {test, expect, describe } = require('@jest/globals');
 
-describe('Check add items and delete items dunction ', () => {
+const ToDoList = require ('./toDo.js');
+
+describe('Check toDo List functions ', () => {
+
+  test('check add function ', () => {
+    expect(ToDoList.add('Wash dishes')).toEqual({description : "Wash dishes",index : 0,completed : false});
+  });
 
 });

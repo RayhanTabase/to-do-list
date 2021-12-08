@@ -56,3 +56,5 @@ export default class ToDoList {
     return model;
   }
 }
+
+module.exports = ToDoList;
