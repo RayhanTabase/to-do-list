@@ -8,10 +8,6 @@
     "build": "webpack",
     "test": "jest"
   },
-  "jest": {
-    "bail": 1,
-    "verbose": true
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/RayhanTabase/to-do-list.git"
