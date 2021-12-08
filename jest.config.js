@@ -4,6 +4,5 @@ module.exports = {
   coverageDirectory: 'coverage',
   coverageProvider: 'v8',
   restoreMocks: false,
-
   setupFiles: ['jest-localstorage-mock'],
 };
