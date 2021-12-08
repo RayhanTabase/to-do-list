@@ -1,6 +1,6 @@
-export default class LocalStorage {
+class LocalStorage {
   // retrieve to-do list
-  static getList() {
+  getList() {
     let toDoList = JSON.parse(localStorage.getItem('toDoList'));
     if (!toDoList) {
       toDoList = [];
@@ -9,7 +9,9 @@ export default class LocalStorage {
   }
 
   // save list to local storage
-  static save(list) {
+  save(list) {
     localStorage.setItem('toDoList', JSON.stringify(list));
   }
 }
+const localStorage = new LocalStorage();
+module.exports =  localStorage;
