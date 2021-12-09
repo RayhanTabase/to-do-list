@@ -1,5 +1,5 @@
-import ToDoList from './toDo.js';
-import LocalStorage from './storage.js';
+const ToDoList = require('./toDo.js');
+const LocalStorage = require('./storage.js');
 
 export default class HtmlToDo {
   // Edit mode

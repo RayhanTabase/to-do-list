@@ -1,7 +1,7 @@
-import LocalStorage from './storage.js';
-import ListItem from './listItem.js';
+const LocalStorage = require('./storage.js');
+const ListItem = require('./listItem.js');
 
-export default class ToDoList {
+class ToDoList {
   // change status(completed) of to-do item
   static changeStatus(index, status) {
     const model = LocalStorage.getList();
@@ -14,8 +14,8 @@ export default class ToDoList {
   static add(newInput) {
     // Add if input is not empty
     if (newInput.trim().length > 0) {
-      const model = LocalStorage.getList();
-      const newIndex = model.length + 1;
+      const model = LocalStorage.getList('toDoList');
+      const newIndex = 1;
       const newItem = new ListItem(newInput, newIndex);
       model.push(newItem);
       LocalStorage.save(model);
@@ -56,3 +56,5 @@ export default class ToDoList {
     return model;
   }
 }
+
+module.exports = ToDoList;
