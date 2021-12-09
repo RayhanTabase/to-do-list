@@ -1,6 +1,4 @@
-const ListItem = require('./listItem.js');
 const LocalStorage = require('./storage.js');
-const { update } = require('./toDo.js');
 const ToDoList = require('./toDo.js');
 
 describe('Check toDo List functions ', () => {
@@ -18,10 +16,10 @@ describe('Check toDo List functions ', () => {
   });
 
   test('check update function ', () => {
-      ToDoList.add('washing dish');
-      ToDoList.update('Clean the dish', 1);
-      const listItem = LocalStorage.getList().find((item) => item.index === 1);
-      expect(listItem.description).toEqual('Clean the dish');
+    ToDoList.add('washing dish');
+    ToDoList.update('Clean the dish', 1);
+    const listItem = LocalStorage.getList().find((item) => item.index === 1);
+    expect(listItem.description).toEqual('Clean the dish');
   });
 
   test('check the task completed', () => {
