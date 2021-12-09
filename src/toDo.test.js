@@ -20,7 +20,19 @@ describe('Check toDo List functions ', () => {
   test('check update function ', () => {
       ToDoList.add('washing dish');
       ToDoList.update('Clean the dish', 1);
-      const listed = LocalStorage.getList().find((item) => item.index === 1);
-      expect(listed).toEqual({ description: 'Clean the dish', index: 1, completed: false });
+      const listItem = LocalStorage.getList().find((item) => item.index === 1);
+      expect(listItem.description).toEqual('Clean the dish');
+  });
+
+  test('check the task completed', () => {
+    ToDoList.changeStatus(1, true);
+    const listItem = LocalStorage.getList().find((item) => item.index === 1);
+    expect(listItem.completed).toBe(true);
+  });
+
+  test('Clear All completed', () => {
+    ToDoList.deleteCompleted();
+    const newModel = LocalStorage.getList();
+    expect(newModel).toHaveLength(0);
   });
 });
