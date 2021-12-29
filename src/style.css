@@ -20,9 +20,9 @@ body {
 }
 
 .toDoListContainer {
-  width: 40em;
+  width: 90%;
   max-width: 90%;
-  min-width: 40em;
+  min-width: 90%;
   border: 2px solid #f6f6f6;
   box-shadow: 0.2em 0.2em 0.2em 0.2em rgba(179, 184, 182, 0.603);
   display: flex;
@@ -34,6 +34,7 @@ body {
   padding-right: 1.3em;
   border-bottom: 2px solid #dfdfdf;
   background: #fff;
+  min-height: 5em;
   height: 5em;
   display: flex;
   align-items: center;
@@ -163,4 +164,12 @@ input[type='text'] {
 
 .toDoItem.container-list .item-description {
   width: 100%;
+}
+
+@media only screen and (min-width: 760px) {
+  .toDoListContainer {
+    width: 50%;
+    max-width: 50%;
+    min-width: 50%;
+  }
 }
