@@ -7,8 +7,6 @@
 ## Screenshots
 
 ![screenshot](./projectImages/image1.jpeg)
-![screenshot](./projectImages/image2.jpeg)
-
 
 ## Live Demo
 
